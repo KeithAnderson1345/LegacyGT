@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LegacyGT.Data\LegacyGT.Data.csproj">
+      <Project>{83bf3c70-0a52-461c-86be-9386a8271aa5}</Project>
+      <Name>LegacyGT.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LegacyGT.Models\LegacyGT.Models.csproj">
+      <Project>{c5190f1b-7a60-4a13-bd45-80ce01bdd97f}</Project>
+      <Name>LegacyGT.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
