@@ -33,6 +33,7 @@ namespace LegacyGT.Data
         }
 
         public DbSet<Player> Players { get; set; }
+        public DbSet<Sponsor> Sponsors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
