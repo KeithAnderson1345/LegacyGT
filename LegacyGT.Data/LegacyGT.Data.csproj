@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dinner.cs" />
     <Compile Include="Donation.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Player.cs" />

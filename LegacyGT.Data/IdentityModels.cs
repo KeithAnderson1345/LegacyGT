@@ -37,6 +37,7 @@ namespace LegacyGT.Data
         public DbSet<Volunteer> Volunteers { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Donation> Donations { get; set; }
+        public DbSet<Dinner> Dinners { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
