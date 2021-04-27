@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace LegacyGT.Models
 {
     public class PlayerListItem
-    {           
+    {
+        public int PlayerId { get; set; }
+
         public string FirstName { get; set; }
        
         public string LastName { get; set; }   

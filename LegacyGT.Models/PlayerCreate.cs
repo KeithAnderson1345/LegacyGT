@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAnnotationsExtensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,16 +19,17 @@ namespace LegacyGT.Models
         public string LastName { get; set; }
 
         [Required]
-        [MinLength(7, ErrorMessage = "Please enter a valid email address.")]        
+        [MinLength(7, ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Please enter a number between 0 - 30")]
-        [MaxLength(2, ErrorMessage = "Too many numbers entered. Please enter a number between 0 - 30")]
+        //[Max(30, ErrorMessage = "Testing This")]
+        //[Min(0)]
+        [Range(0, 30, ErrorMessage = "Value must be between 0 and 30")]
         public int Handicap { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Please enter a size from the following: S / M / L / XL / XXL / XXXL")]        
+        [MinLength(1, ErrorMessage = "Please enter a size from the following: S / M / L / XL / XXL / XXXL")]
         public string ShirtSize { get; set; }
 
         [Required]

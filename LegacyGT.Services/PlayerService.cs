@@ -53,6 +53,7 @@ namespace LegacyGT.Services
                         e =>
                         new PlayerListItem
                         {
+                            PlayerId = e.PlayerId,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
                             Created = e.Created
