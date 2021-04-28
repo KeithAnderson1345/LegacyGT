@@ -4,6 +4,8 @@
     ViewBag.Title = "Index";
 }
 
+<h2>Index</h2>
+
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -13,8 +15,6 @@
         @TempData["SaveResult"]
     </div>
 }
-
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

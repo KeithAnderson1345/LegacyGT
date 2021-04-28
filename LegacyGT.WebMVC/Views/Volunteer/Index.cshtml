@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LegacyGT.Models.SponsorListItem>
+﻿@model IEnumerable<LegacyGT.Models.VolunteerListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -22,7 +22,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SponsorId)
+            @Html.DisplayNameFor(model => model.VolunteerId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -40,7 +40,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.SponsorId)
+                @Html.DisplayFor(modelItem => item.VolunteerId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
@@ -52,9 +52,9 @@
                 @Html.DisplayFor(modelItem => item.Created)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SponsorId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SponsorId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SponsorId })
+                @Html.ActionLink("Edit", "Edit", new { id=item.VolunteerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.VolunteerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.VolunteerId })
             </td>
         </tr>
     }

@@ -5,35 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LegacyGT.Data
+namespace LegacyGT.Models
 {
-    public class Volunteer
+    public class VolunteerDetail
     {
-        [Key]
         public int VolunteerId { get; set; }
 
-        [Required]
-        public Guid OwnerId { get; set; }
-
-        [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
-        [Required]
         public string Email { get; set; }
 
-        [Required]
         public string ShirtSize { get; set; }
 
-        [Required]
         public bool Dinner { get; set; }
 
-        [Required]
+        [Display(Name = "Registration Date")]
         public DateTimeOffset Created { get; set; }
 
-        
         public DateTimeOffset? Modified { get; set; }
     }
 }

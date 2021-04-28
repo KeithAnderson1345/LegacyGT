@@ -5,35 +5,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LegacyGT.Data
+namespace LegacyGT.Models
 {
-    public class Volunteer
+    public class VolunteerCreate
     {
-        [Key]
-        public int VolunteerId { get; set; }
-
         [Required]
-        public Guid OwnerId { get; set; }
-
-        [Required]
+        [MinLength(1, ErrorMessage = "Please enter at least one character.")]
         public string FirstName { get; set; }
 
         [Required]
+        [MinLength(1, ErrorMessage = "Please enter at least one character.")]
         public string LastName { get; set; }
 
         [Required]
+        [MinLength(7, ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 
         [Required]
+        [MinLength(1, ErrorMessage = "Please enter a size from the following: S / M / L / XL / XXL / XXXL")]
         public string ShirtSize { get; set; }
 
         [Required]
         public bool Dinner { get; set; }
-
-        [Required]
-        public DateTimeOffset Created { get; set; }
-
-        
-        public DateTimeOffset? Modified { get; set; }
     }
 }

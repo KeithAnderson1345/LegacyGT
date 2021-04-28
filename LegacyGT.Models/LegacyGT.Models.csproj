@@ -66,6 +66,10 @@
     <Compile Include="SponsorDetail.cs" />
     <Compile Include="SponsorEdit.cs" />
     <Compile Include="SponsorListItem.cs" />
+    <Compile Include="VolunteerCreate.cs" />
+    <Compile Include="VolunteerDetail.cs" />
+    <Compile Include="VolunteerEdit.cs" />
+    <Compile Include="VolunteerListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
