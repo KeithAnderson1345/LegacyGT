@@ -62,6 +62,10 @@
     <Compile Include="PlayerEdit.cs" />
     <Compile Include="PlayerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SponsorCreate.cs" />
+    <Compile Include="SponsorDetail.cs" />
+    <Compile Include="SponsorEdit.cs" />
+    <Compile Include="SponsorListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
