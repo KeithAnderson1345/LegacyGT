@@ -14,14 +14,14 @@ namespace LegacyGT.Data
         public int DinnerId { get; set; }
 
         [Required]
-        public bool DinnerChoosen { get; set; }
+        public bool DinnerChosen { get; set; }
 
         [ForeignKey(nameof(Player))]
-        public int PlayerId { get; set; }
+        public int? PlayerId { get; set; }
         public virtual Player Player { get; set; }
 
         [ForeignKey(nameof(Volunteer))]
-        public int VolunteerId { get; set; }
+        public int? VolunteerId { get; set; }
         public virtual Volunteer Volunteer { get; set; }
 
     }

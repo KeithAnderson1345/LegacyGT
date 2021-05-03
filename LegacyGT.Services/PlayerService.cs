@@ -37,7 +37,12 @@ namespace LegacyGT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Players.Add(entity);
-                return ctx.SaveChanges() == 1;
+
+                int playerId = entity.PlayerId;
+                ctx.Dinners.Add(new Dinner() { PlayerId = playerId, DinnerChosen = entity.Dinner });
+
+
+                return ctx.SaveChanges() >= 1;
             }
         }
 
@@ -109,7 +114,13 @@ namespace LegacyGT.Services
                 entity.Mulligans = model.Mulligans;
                 entity.Modified = DateTimeOffset.Now;
 
-                return ctx.SaveChanges() == 1;
+                var dinnerEntity =
+                    ctx
+                    .Dinners
+                    .Single(e => e.PlayerId == model.PlayerId);
+                dinnerEntity.DinnerChosen = model.Dinner;
+
+                return ctx.SaveChanges() >= 1;
             }
         }
 
@@ -124,7 +135,16 @@ namespace LegacyGT.Services
 
                 ctx.Players.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                
+                var dinnerEntity =
+                    ctx
+                    .Dinners
+                    .Single(e => e.PlayerId == playerId);
+
+                ctx.Dinners.Remove(dinnerEntity);
+
+
+                return ctx.SaveChanges() >= 1;
             }
         }
     }

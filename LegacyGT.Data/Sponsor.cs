@@ -22,6 +22,9 @@ namespace LegacyGT.Data
         public string LastName { get; set; }
 
         [Required]
+        public string Donation { get; set; }
+
+        [Required]
         public string Email { get; set; }
 
         [Required]

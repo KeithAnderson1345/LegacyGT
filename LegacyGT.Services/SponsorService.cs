@@ -25,6 +25,7 @@ namespace LegacyGT.Services
                     OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
+                    Donation = model.Donation,
                     Email = model.Email,
                     Created = DateTimeOffset.Now
                 };
@@ -32,7 +33,11 @@ namespace LegacyGT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Sponsors.Add(entity);
-                return ctx.SaveChanges() == 1;
+
+                int sponsorId = entity.SponsorId;
+                ctx.Donations.Add(new Donation() { SponsorId = sponsorId, Donations = entity.Donation });
+
+                return ctx.SaveChanges() >= 1;
             }
         }
 
@@ -73,6 +78,7 @@ namespace LegacyGT.Services
                         SponsorId = entity.SponsorId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
+                        Donation = entity.Donation,
                         Email = entity.Email,
                         Created = entity.Created,
                         Modified = entity.Modified
@@ -91,10 +97,17 @@ namespace LegacyGT.Services
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
+                entity.Donation = model.Donation;
                 entity.Email = model.Email;
                 entity.Modified = DateTimeOffset.Now;
 
-                return ctx.SaveChanges() == 1;
+                var donationEntity =
+                    ctx
+                    .Donations
+                    .Single(e => e.SponsorId == model.SponsorId);
+                donationEntity.Donations = model.Donation;
+
+                return ctx.SaveChanges() >= 1;
             }
         }
 
@@ -109,7 +122,14 @@ namespace LegacyGT.Services
 
                 ctx.Sponsors.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                var donationEntity =
+                    ctx
+                    .Donations
+                    .Single(e => e.SponsorId == sponsorId);
+
+                ctx.Donations.Remove(donationEntity);
+
+                return ctx.SaveChanges() >= 1;
             }
         }
     }

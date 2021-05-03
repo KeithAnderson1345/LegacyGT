@@ -25,7 +25,8 @@ namespace LegacyGT.Services
                     OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    Email = model.Email,                    
+                    Email = model.Email,   
+                    Positions = model.Positions,
                     ShirtSize = model.ShirtSize,
                     Dinner = model.Dinner,
                     Created = DateTimeOffset.Now
@@ -34,7 +35,12 @@ namespace LegacyGT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Volunteers.Add(entity);
-                return ctx.SaveChanges() == 1;
+
+                int volunteerId = entity.VolunteerId;
+                ctx.Dinners.Add(new Dinner() { VolunteerId = volunteerId, DinnerChosen = entity.Dinner });
+                ctx.Positions.Add(new Position() { VolunteerId = volunteerId, Positions = entity.Positions });
+
+                return ctx.SaveChanges() >= 1;
             }
         }
 
@@ -76,6 +82,7 @@ namespace LegacyGT.Services
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         Email = entity.Email,
+                        Positions = entity.Positions,
                         ShirtSize = entity.ShirtSize,
                         Dinner = entity.Dinner,
                         Created = entity.Created,
@@ -95,12 +102,25 @@ namespace LegacyGT.Services
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
-                entity.Email = model.Email;                
+                entity.Email = model.Email;
+                entity.Positions = model.Positions;
                 entity.ShirtSize = model.ShirtSize;
                 entity.Dinner = model.Dinner;                
                 entity.Modified = DateTimeOffset.Now;
 
-                return ctx.SaveChanges() == 1;
+                var dinnerEntity =
+                    ctx
+                    .Dinners
+                    .Single(e => e.VolunteerId == model.VolunteerId);
+                dinnerEntity.DinnerChosen = model.Dinner;
+
+                var positionEntity =
+                    ctx
+                    .Positions
+                    .Single(e => e.VolunteerId == model.VolunteerId);
+                positionEntity.Positions = model.Positions;
+
+                return ctx.SaveChanges() >= 1;
             }
         }
 
@@ -115,7 +135,20 @@ namespace LegacyGT.Services
 
                 ctx.Volunteers.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
+                var dinnerEntity =
+                    ctx
+                    .Dinners
+                    .Single(e => e.VolunteerId == volunteerId);
+
+                ctx.Dinners.Remove(dinnerEntity);
+
+                var positionEntity =
+                    ctx
+                    .Positions
+                    .Single(e => e.VolunteerId == volunteerId);
+                ctx.Positions.Remove(positionEntity);
+
+                return ctx.SaveChanges() >= 1;
             }
         }
     }

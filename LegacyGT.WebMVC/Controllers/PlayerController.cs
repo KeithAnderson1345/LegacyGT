@@ -1,4 +1,5 @@
-﻿using LegacyGT.Models;
+﻿using LegacyGT.Data;
+using LegacyGT.Models;
 using LegacyGT.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -45,12 +46,17 @@ namespace LegacyGT.WebMVC.Controllers
             if (!ModelState.IsValid) return View(model);
 
             var service = CreatePlayerService();
+            
 
             if (service.CreatePlayer(model))
             {
+                //var dinnerService = CreateDinnerService();
+                //dinnerService.CreatePlayerDinner(model);
                 TempData["SaveResult"] = "Player was created.";                
                 return RedirectToAction("Index");
             }
+
+
 
 
             ModelState.AddModelError("", "Player could not be created.");
@@ -141,6 +147,13 @@ namespace LegacyGT.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new PlayerService(userId);
             return service;
+        }
+
+        public DinnerService CreateDinnerService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var dinnerService = new DinnerService(userId);
+            return dinnerService;
         }
     }
 }

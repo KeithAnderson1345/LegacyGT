@@ -66,6 +66,7 @@ namespace LegacyGT.WebMVC.Controllers
                     SponsorId = detail.SponsorId,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
+                    Donation = detail.Donation,
                     Email = detail.Email                    
                 };
 

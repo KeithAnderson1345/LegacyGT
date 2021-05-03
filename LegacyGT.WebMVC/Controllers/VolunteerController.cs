@@ -66,7 +66,8 @@ namespace LegacyGT.WebMVC.Controllers
                     VolunteerId = detail.VolunteerId,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
-                    Email = detail.Email,                    
+                    Email = detail.Email,
+                    Positions = detail.Positions,
                     ShirtSize = detail.ShirtSize,
                     Dinner = detail.Dinner                    
                 };

@@ -25,6 +25,9 @@ namespace LegacyGT.Data
         public string Email { get; set; }
 
         [Required]
+        public string Positions { get; set; }
+
+        [Required]
         public string ShirtSize { get; set; }
 
         [Required]

@@ -35,6 +35,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Donation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donation)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
 
@@ -61,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.SponsorId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SponsorId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

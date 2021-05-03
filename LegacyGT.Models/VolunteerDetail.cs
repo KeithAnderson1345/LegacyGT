@@ -17,6 +17,8 @@ namespace LegacyGT.Models
 
         public string Email { get; set; }
 
+        public string Positions { get; set; }
+
         public string ShirtSize { get; set; }
 
         public bool Dinner { get; set; }

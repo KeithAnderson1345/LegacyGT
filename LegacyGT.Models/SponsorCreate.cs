@@ -18,6 +18,10 @@ namespace LegacyGT.Models
         public string LastName { get; set; }
 
         [Required]
+        [MinLength(1, ErrorMessage = "Please make a donation to become a Sponsor.")]
+        public string Donation { get; set; }
+
+        [Required]
         [MinLength(7, ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 

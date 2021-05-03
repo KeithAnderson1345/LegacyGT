@@ -22,6 +22,9 @@ namespace LegacyGT.Models
         public string Email { get; set; }
 
         [Required]
+        public string Positions { get; set; }
+
+        [Required]
         [MinLength(1, ErrorMessage = "Please enter a size from the following: S / M / L / XL / XXL / XXXL")]
         public string ShirtSize { get; set; }
 

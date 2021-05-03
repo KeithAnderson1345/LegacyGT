@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LegacyGT.Models
 {
     public class PlayerCreate
-    {
+    {        
         [Required]
         [MinLength(1, ErrorMessage = "Please enter at least one character.")]        
         public string FirstName { get; set; }
