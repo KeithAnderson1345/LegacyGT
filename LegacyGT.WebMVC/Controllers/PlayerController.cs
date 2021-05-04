@@ -33,16 +33,6 @@ namespace LegacyGT.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PlayerCreate model)
         {
-           /* if(model.Handicap > 30)
-            {
-                TempData["HandicapToHigh"] = "Enter a lower Handicap[0-30]";
-                
-            } else if (model.Handicap < 0)
-            {
-                ModelState.AddModelError(string.Empty, "No negative handicap[0-30]");
-            } */
-
-
             if (!ModelState.IsValid) return View(model);
 
             var service = CreatePlayerService();
