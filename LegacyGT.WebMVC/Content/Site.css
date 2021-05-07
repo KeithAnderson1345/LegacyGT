@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    /*background-image: url('Assets/course.jpg');*/
+    background-image: linear-gradient(red, yellow, green);
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +24,32 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.welcome h1{
+    text-align: center;
+    font: bold;
+    color: rgb(0,0,0, 1.0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.statement {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(0,0,0, 1.0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.welcome ul {
+    color: rgb(0,0,0, 1.0);
+    font: bold;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.col-md-4 {
+    color: rgb(0,0,0, 1.0);
+    font: bold;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
