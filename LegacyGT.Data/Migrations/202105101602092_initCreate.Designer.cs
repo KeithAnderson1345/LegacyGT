@@ -7,13 +7,13 @@ namespace LegacyGT.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class DinnerChosenSpelledCorrectly : IMigrationMetadata
+    public sealed partial class initCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DinnerChosenSpelledCorrectly));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104302143577_DinnerChosenSpelledCorrectly"; }
+            get { return "202105101602092_initCreate"; }
         }
         
         string IMigrationMetadata.Source

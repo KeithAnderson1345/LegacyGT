@@ -10,7 +10,6 @@ namespace LegacyGT.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "LegacyGT.Data.ApplicationDbContext";
         }
 
         protected override void Seed(LegacyGT.Data.ApplicationDbContext context)

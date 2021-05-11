@@ -57,37 +57,9 @@
     <Compile Include="Dinner.cs" />
     <Compile Include="Donation.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104272013553_InitialCreate.cs" />
-    <Compile Include="Migrations\202104272013553_InitialCreate.Designer.cs">
-      <DependentUpon>202104272013553_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104280056325_Sponsormodnotrequired.cs" />
-    <Compile Include="Migrations\202104280056325_Sponsormodnotrequired.Designer.cs">
-      <DependentUpon>202104280056325_Sponsormodnotrequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104281711487_VolunteerModNotRequired.cs" />
-    <Compile Include="Migrations\202104281711487_VolunteerModNotRequired.Designer.cs">
-      <DependentUpon>202104281711487_VolunteerModNotRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104281752555_VolunteerOwnerIdAdded.cs" />
-    <Compile Include="Migrations\202104281752555_VolunteerOwnerIdAdded.Designer.cs">
-      <DependentUpon>202104281752555_VolunteerOwnerIdAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104302143577_DinnerChosenSpelledCorrectly.cs" />
-    <Compile Include="Migrations\202104302143577_DinnerChosenSpelledCorrectly.Designer.cs">
-      <DependentUpon>202104302143577_DinnerChosenSpelledCorrectly.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105011330011_DinnerFKNullable.cs" />
-    <Compile Include="Migrations\202105011330011_DinnerFKNullable.Designer.cs">
-      <DependentUpon>202105011330011_DinnerFKNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105011348534_ModifiedVolunteer.cs" />
-    <Compile Include="Migrations\202105011348534_ModifiedVolunteer.Designer.cs">
-      <DependentUpon>202105011348534_ModifiedVolunteer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105031543169_AddDonationToSponsor.cs" />
-    <Compile Include="Migrations\202105031543169_AddDonationToSponsor.Designer.cs">
-      <DependentUpon>202105031543169_AddDonationToSponsor.cs</DependentUpon>
+    <Compile Include="Migrations\202105101602092_initCreate.cs" />
+    <Compile Include="Migrations\202105101602092_initCreate.Designer.cs">
+      <DependentUpon>202105101602092_initCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Player.cs" />
@@ -101,29 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104272013553_InitialCreate.resx">
-      <DependentUpon>202104272013553_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104280056325_Sponsormodnotrequired.resx">
-      <DependentUpon>202104280056325_Sponsormodnotrequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104281711487_VolunteerModNotRequired.resx">
-      <DependentUpon>202104281711487_VolunteerModNotRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104281752555_VolunteerOwnerIdAdded.resx">
-      <DependentUpon>202104281752555_VolunteerOwnerIdAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104302143577_DinnerChosenSpelledCorrectly.resx">
-      <DependentUpon>202104302143577_DinnerChosenSpelledCorrectly.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105011330011_DinnerFKNullable.resx">
-      <DependentUpon>202105011330011_DinnerFKNullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105011348534_ModifiedVolunteer.resx">
-      <DependentUpon>202105011348534_ModifiedVolunteer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105031543169_AddDonationToSponsor.resx">
-      <DependentUpon>202105031543169_AddDonationToSponsor.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105101602092_initCreate.resx">
+      <DependentUpon>202105101602092_initCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

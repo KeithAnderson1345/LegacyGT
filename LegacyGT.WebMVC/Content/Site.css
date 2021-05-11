@@ -1,8 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    /*background-image: url('Assets/course.jpg');*/
-    background-image: linear-gradient(red, yellow, green);
+    background-image: url('Assets/golfball.jpg');
     background-size: cover;
 }
 
@@ -26,30 +25,97 @@ textarea {
     max-width: 280px;
 }
 
-.welcome h1{
+.welcome h1 {
     text-align: center;
-    font: bold;
-    color: rgb(0,0,0, 1.0);
+    color: chartreuse;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5rem;
 }
 
 .statement {
     text-align: center;
     font-size: 30px;
-    color: rgb(0,0,0, 1.0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px chartreuse;
+    font-family: 'Comic Sans MS', 'Arial Narrow', Arial, sans-serif;
 }
 
 .welcome ul {
-    color: rgb(0,0,0, 1.0);
+    color: yellow;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     font: bold;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .col-md-4 {
-    color: rgb(0,0,0, 1.0);
+    text-shadow: 1px 1px 2px red;
     font: bold;
     font-size: 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.center {
+    display: block;
+    padding-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.hr-line {
+    border: 10px solid green;
+    border-radius: 5px;
+}
+
+.hr-line2 {
+    border: 10px solid yellow;
+    border-radius: 5px;
+}
+
+div .list ul {
+    background: rgb(28 215 209);
+    padding: 20px;    
+}
+
+/*#motion {
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: blue;
+        left: 0px;
+        top: 0px;
+    }
+
+    75% {
+        background-color: green;
+        left: 200px;
+        top: 0px;
+    }
+
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}*/

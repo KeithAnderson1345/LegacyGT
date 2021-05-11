@@ -3,7 +3,7 @@ namespace LegacyGT.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initCreate : DbMigration
     {
         public override void Up()
         {
@@ -12,13 +12,13 @@ namespace LegacyGT.Data.Migrations
                 c => new
                     {
                         DinnerId = c.Int(nullable: false, identity: true),
-                        DinnerChoosen = c.Boolean(nullable: false),
-                        PlayerId = c.Int(nullable: false),
-                        VolunteerId = c.Int(nullable: false),
+                        DinnerChosen = c.Boolean(nullable: false),
+                        PlayerId = c.Int(),
+                        VolunteerId = c.Int(),
                     })
                 .PrimaryKey(t => t.DinnerId)
-                .ForeignKey("dbo.Player", t => t.PlayerId, cascadeDelete: true)
-                .ForeignKey("dbo.Volunteer", t => t.VolunteerId, cascadeDelete: true)
+                .ForeignKey("dbo.Player", t => t.PlayerId)
+                .ForeignKey("dbo.Volunteer", t => t.VolunteerId)
                 .Index(t => t.PlayerId)
                 .Index(t => t.VolunteerId);
             
@@ -46,13 +46,15 @@ namespace LegacyGT.Data.Migrations
                 c => new
                     {
                         VolunteerId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         Email = c.String(nullable: false),
+                        Positions = c.String(nullable: false),
                         ShirtSize = c.String(nullable: false),
                         Dinner = c.Boolean(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
-                        Modified = c.DateTimeOffset(nullable: false, precision: 7),
+                        Modified = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.VolunteerId);
             
@@ -76,9 +78,10 @@ namespace LegacyGT.Data.Migrations
                         OwnerId = c.Guid(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
+                        Donation = c.String(nullable: false),
                         Email = c.String(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
-                        Modified = c.DateTimeOffset(nullable: false, precision: 7),
+                        Modified = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.SponsorId);
             

@@ -3,17 +3,23 @@
 }
 
 <div class="welcome">
+    <img src="~/Content/Assets/golfcourse2.jpg" class="center" />
     <h1>Welcome to the Legacy Golf Tournament</h1>
+    <hr class="hr-line" />
+    <p><img src="~/Content/Assets/newrescue.png" class="center" /></p>
     <p class="statement">This tournament is a charity event for animals needing a FURever home.</p>
-    <ul>
-        <li>If you are a golfer and would like to participate, please create a Player once registered. Your entry fee will go towards helping some furry friends find forever homes.</li>
-        <li>If you would like to make a donation, please create a Sponsor once registered. We accept cash, prizes for raffles, signs for each hole, gifts for golfers, etc.</li>
-        <li>If you would like to help us on tournament day, please create a Volunteer once registered. We have numerous positions that need to be filled.</li>
-    </ul>
-    <p><a href="https://www.furryfriendsrescue.org/" class="btn btn-success btn-lg">Foundation Info &raquo;</a></p>
+    <hr class="hr-line2" />
+    <div class="list">
+        <ul>
+            <li>If you are a golfer and would like to participate, please create a Player once registered. Your entry fee will go towards helping some furry friends find forever homes.</li>
+            <li>If you would like to make a donation, please create a Sponsor once registered. We accept cash, prizes for raffles, signs for each hole, gifts for golfers, etc.</li>
+            <li>If you would like to help us on tournament day, please create a Volunteer once registered. We have numerous positions that need to be filled.</li>
+        </ul>
+    </div>
 </div>
+    <p><a href="https://www.furryfriendsrescue.org/" class="btn btn-success btn-lg">Foundation Info &raquo;</a></p>
 
-@if (User.Identity.IsAuthenticated)
+@*@if (User.Identity.IsAuthenticated)
 {
     <div class="row">
         <div class="col-md-4">
@@ -34,4 +40,4 @@
             <p><a class="btn btn-default" href="https://localhost:44369/Volunteer/Create">Volunteer Create &raquo;</a></p>
         </div>
     </div>
-}
+}*@
